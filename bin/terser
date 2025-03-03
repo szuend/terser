@@ -14,8 +14,12 @@ const program = require("commander");
 
 const packageJson = require("../package.json");
 const { _run_cli: run_cli } = require("..");
+// (async () => {
+// const { run_cli } =await import("../lib/cli.js");
 
 run_cli({ program, packageJson, fs, path }).catch((error) => {
     console.error(error);
     process.exitCode = 1;
 });
+
+// })();
